@@ -407,6 +407,30 @@
 
 
 
+  
+  <div id="gitment-ctn"></div>
+  
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+      <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  
+  <script>
+    <!-- id: "解决MariaDB中文乱码" -->
+    const gitalk = new Gitalk({
+      oauth: {
+        client_id: 'e138711c4e528e76c33a',
+        client_secret: '375d2febce1d11c5c1640c21639954d5e5965500',
+      },
+      repo: 'blog-comment',
+      owner: 'IcebreakRuler',
+      admin: 'IcebreakRuler',
+      id: "20180426154600",     // Ensure uniqueness and length less than 50
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitment-ctn')
+  </script>
+
+
+  
 
 
 
