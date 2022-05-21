@@ -406,48 +406,6 @@
 
 
 
-    <section id="comments" class="comments">
-        <style>
-          .comments {
-            margin: 30px;
-            padding: 10px;
-            background: #fff
-          }
-
-          @media screen and (max-width: 800px) {
-            .comments {
-              margin: auto;
-              padding: 10px;
-              background: #fff
-            }
-          }
-        </style>
-        
-    <div id="gitalk-ctn"></div>
-    
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-        <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-    
-    <script>
-      <!-- id: "解决MariaDB中文乱码" -->
-      const gitalk = new Gitalk({
-        oauth: {
-          client_id: 'e138711c4e528e76c33a',
-          client_secret: '375d2febce1d11c5c1640c21639954d5e5965500',
-        },
-        repo: 'icebreakRuler.github.io',
-        owner: 'IcebreakRuler',
-        admin: ['IcebreakRuler'],
-        id: "20180426154600",     // Ensure uniqueness and length less than 50
-        distractionFreeMode: true,  // Facebook-like distraction free mode
-        labels: ['gitalk']
-      })
-      gitalk.render('gitalk-ctn')
-    </script>
-
-
-    </section>
-
 
 
 
