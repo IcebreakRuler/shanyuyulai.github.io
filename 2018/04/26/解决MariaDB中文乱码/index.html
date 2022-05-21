@@ -429,6 +429,7 @@
         <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     
     <script>
+      <!-- id: "解决MariaDB中文乱码" -->
       const gitalk = new Gitalk({
         oauth: {
           client_id: 'e138711c4e528e76c33a',
@@ -436,7 +437,7 @@
         },
         repo: 'blog-comment',
         owner: 'IcebreakRuler',
-        admin: 'IcebreakRuler',
+        admin: ['IcebreakRuler'],
         id: "20180426154600",     // Ensure uniqueness and length less than 50
         distractionFreeMode: true,  // Facebook-like distraction free mode
         labels: ['gitalk']
