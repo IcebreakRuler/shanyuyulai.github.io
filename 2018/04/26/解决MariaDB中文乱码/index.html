@@ -6,21 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://IcebreakRuler.github.io">
-  <title>阿黄学编程</title>
+  <title>解决MariaDB中文乱码 | 阿黄学编程</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="阿黄学编程">
-<meta property="og:url" content="https://icebreakruler.github.io/index.html">
+  <meta name="description" content="解决MariaDB中文乱码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决MariaDB中文乱码">
+<meta property="og:url" content="https://icebreakruler.github.io/2018/04/26/%E8%A7%A3%E5%86%B3MariaDB%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/index.html">
 <meta property="og:site_name" content="阿黄学编程">
+<meta property="og:description" content="解决MariaDB中文乱码">
 <meta property="og:locale">
+<meta property="og:image" content="https://icebreakruler.github.io/yilia-plus-demo/images/2743275-aed00e544adf23d4.png">
+<meta property="og:image" content="https://icebreakruler.github.io/yilia-plus-demo/images/2743275-109f93534d06e671.png">
+<meta property="article:published_time" content="2018-04-26T07:46:00.000Z">
+<meta property="article:modified_time" content="2022-05-21T05:35:15.297Z">
 <meta property="article:author" content="阿黄">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://icebreakruler.github.io/yilia-plus-demo/images/2743275-aed00e544adf23d4.png">
   
     <link rel="alternative" href="/atom.xml" title="阿黄学编程" type="application/atom+xml">
   
@@ -193,115 +197,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-拉取订单问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-解决MariaDB中文乱码" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/05/21/%E6%8B%89%E5%8F%96%E8%AE%A2%E5%8D%95%E9%97%AE%E9%A2%98/" target="_blank">拉取订单问题</a>
-  
+    <h1 class="article-title" itemprop="name">
+      解决MariaDB中文乱码
     </h1>
   
 
 
   
   
-<a href="/2020/05/21/%E6%8B%89%E5%8F%96%E8%AE%A2%E5%8D%95%E9%97%AE%E9%A2%98/" class="archive-article-date">
-        <time datetime="2020-05-20T17:01:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="拉取订单问题"><a href="#拉取订单问题" class="headerlink" title="拉取订单问题"></a>拉取订单问题</h3><h4 id="一、-定时获取订单看不到日志"><a href="#一、-定时获取订单看不到日志" class="headerlink" title="一、 定时获取订单看不到日志"></a>一、 定时获取订单看不到日志</h4><p>商户可能没有配合订单抓取业务，所以定时拉取订单看不到日志，具体操作 ：已入网商户列表–&gt;业务设置</p>
-<h3 id="二、-Partner-and-shop-has-no-linked"><a href="#二、-Partner-and-shop-has-no-linked" class="headerlink" title="二、 Partner and shop has no linked"></a>二、 Partner and shop has no linked</h3><p>注意绑定授权的时候 不要填已经授权过的电商平台账号了, 我们平台是不能存在多个店铺是使用同一个电商平台账号授权的。只能重新授权。</p>
-<h2 id="订单拉取请求接口"><a href="#订单拉取请求接口" class="headerlink" title="订单拉取请求接口"></a>订单拉取请求接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> shopOrder/grabOrder 拉取订单按钮</span><br><span class="line"><span class="number">2.</span> shopOrder/grabOrderDetail 仅同步订单详情</span><br><span class="line"><span class="number">3.</span> shopOrder/synchronizeOrder 同步订单数据到海店汇</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/05/21/%E6%8B%89%E5%8F%96%E8%AE%A2%E5%8D%95%E9%97%AE%E9%A2%98/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">线上问题排查</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/05/21/%E6%8B%89%E5%8F%96%E8%AE%A2%E5%8D%95%E9%97%AE%E9%A2%98/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-
-
-
-  
-    <article id="post-解决MariaDB中文乱码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/26/%E8%A7%A3%E5%86%B3MariaDB%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" target="_blank">解决MariaDB中文乱码</a>
-  
-    </h1>
-  
-
-
-  
-  
 <a href="/2018/04/26/%E8%A7%A3%E5%86%B3MariaDB%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" class="archive-article-date">
         <time datetime="2018-04-26T07:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
 </a>
@@ -309,6 +223,27 @@
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">80字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
@@ -318,13 +253,39 @@
     <h4 id="1、检查自己数据库编码"><a href="#1、检查自己数据库编码" class="headerlink" title="1、检查自己数据库编码"></a>1、检查自己数据库编码</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mysql -uroot -proot</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">show VARIABLES like <span class="string">&#x27;char%&#x27;</span>;</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="/yilia-plus-demo/images/2743275-aed00e544adf23d4.png"></p>
-    
-    <a class="article-more-a" href="/2018/04/26/%E8%A7%A3%E5%86%B3MariaDB%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/#more">more >></a>
-    
-    
+<span id="more"></span>
+<h4 id="2、更改Client和Server编码都是UTF-8"><a href="#2、更改Client和Server编码都是UTF-8" class="headerlink" title="2、更改Client和Server编码都是UTF-8"></a>2、更改Client和Server编码都是UTF-8</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim /etc/my.cnf.d/server.cnf</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在<code>server.cnf</code>中<code>[mysqld]</code>标签下添加代码</strong></p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">init-connect</span>=<span class="string">&#x27;SET NAMES utf8&#x27;</span></span><br><span class="line"><span class="attr">character-set-server</span> = <span class="string">utf8</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/yilia-plus-demo/images/2743275-109f93534d06e671.png"></p>
+<h6 id="重启MariaDB即可"><a href="#重启MariaDB即可" class="headerlink" title="重启MariaDB即可"></a>重启MariaDB即可</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">systemctl restart mariadb</span></span><br><span class="line">--- 如果已经添加为服务</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">service mysqld restart</span></span><br></pre></td></tr></table></figure>
 
     
 
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          阿黄
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://IcebreakRuler.github.io/2018/04/26/解决MariaDB中文乱码/" title="解决MariaDB中文乱码" target="_blank">https://IcebreakRuler.github.io/2018/04/26/解决MariaDB中文乱码/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -345,16 +306,80 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/26/%E8%A7%A3%E5%86%B3MariaDB%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://icebreakruler.github.io/2018/04/26/%E8%A7%A3%E5%86%B3MariaDB%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2020/05/21/%E6%8B%89%E5%8F%96%E8%AE%A2%E5%8D%95%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          拉取订单问题
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -375,8 +400,14 @@
 
 
 
-  
-  
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -416,8 +447,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
