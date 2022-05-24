@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://icebreakruler.github.io">
-  <title>Tag: 随笔 | 阿黄学编程</title>
+  <title>java.lang.NoClassDefFoundError:org/apache/commons/collections/Predicate | 阿黄学编程</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="阿黄学编程">
-<meta property="og:url" content="https://icebreakruler.github.io/tags/%E9%9A%8F%E7%AC%94/index.html">
+  <meta name="description" content="java.lang.NoClassDefFoundError">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java.lang.NoClassDefFoundError:org&#x2F;apache&#x2F;commons&#x2F;collections&#x2F;Predicate">
+<meta property="og:url" content="https://icebreakruler.github.io/2022/05/24/NoClassDefFoundError/index.html">
 <meta property="og:site_name" content="阿黄学编程">
+<meta property="og:description" content="java.lang.NoClassDefFoundError">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-05-24T01:54:00.000Z">
+<meta property="article:modified_time" content="2022-05-24T02:19:31.421Z">
 <meta property="article:author" content="阿黄">
+<meta property="article:tag" content="异常">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="阿黄学编程" type="application/atom+xml">
@@ -189,65 +194,237 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-NoClassDefFoundError" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2018/04/26/%E8%A7%A3%E5%86%B3MariaDB%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" class="archive-article-date">
-        <time datetime="2018-04-26T07:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2018/04/26/%E8%A7%A3%E5%86%B3MariaDB%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" target="_blank">解决MariaDB中文乱码</a>
   
+    <h1 class="article-title" itemprop="name">
+      java.lang.NoClassDefFoundError:org/apache/commons/collections/Predicate
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/05/24/NoClassDefFoundError/" class="archive-article-date">
+        <time datetime="2022-05-24T01:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">610字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="一、NoClassDefFoundError错误发生的原因"><a href="#一、NoClassDefFoundError错误发生的原因" class="headerlink" title="一、NoClassDefFoundError错误发生的原因"></a>一、NoClassDefFoundError错误发生的原因</h4><p>NoClassDefFoundError错误的发生，是因为Java<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%99%9A%E6%8B%9F%E6%9C%BA&spm=1001.2101.3001.7020">虚拟机</a>在编译时能找到合适的类，而在运行时不能找到合适的类导致的错误。例如在运行时我们想调用某个类的方法或者访问这个类的静态成员的时候，发现这个类不可用，此时Java虚拟机就会抛出NoClassDefFoundError错误。与ClassNotFoundException的不同在于，这个错误发生只在运行时需要加载对应的类不成功，而不是编译时发生。很多Java开发者很容易在这里把这两个错误搞混。</p>
+<span id="more"></span>
+
+<h4 id="二、-NoClassDefFoundError和ClassNotFoundException区别"><a href="#二、-NoClassDefFoundError和ClassNotFoundException区别" class="headerlink" title="二、 NoClassDefFoundError和ClassNotFoundException区别"></a>二、 NoClassDefFoundError和ClassNotFoundException区别</h4><p>我们经常被java.lang.ClassNotFoundException和java.lang.NoClassDefFoundError这两个错误迷惑不清，尽管他们都与<a target="_blank" rel="noopener" href="http://lib.csdn.net/base/java">Java </a>classpath有关，但是他们完全不同。NoClassDefFoundError发生在JVM在动态运行时，根据你提供的类名，在classpath中找到对应的类进行加载，但当它找不到这个类时，就发生了java.lang.NoClassDefFoundError的错误，而ClassNotFoundException是在编译的时候在classpath中找不到对应的类而发生的错误。ClassNotFoundException比NoClassDefFoundError容易解决，是因为在编译时我们就知道错误发生，并且完全是由于环境的问题导致。而如果你在J2EE的环境下工作，并且得到NoClassDefFoundError的异常，而且对应的错误的类是确实存在的，这说明这个类对于类加载器来说，可能是不可见的。</p>
+<h4 id="三、-如何解决"><a href="#三、-如何解决" class="headerlink" title="三、 如何解决"></a>三、 如何解决</h4><p>今天在开发一个需求时，发现接口返回不是200，一直返回500，导致loading层一直不消失，后台日志里也看不到异常被抛出。这就很奇怪。 于是我打断点debug，一步一步走，发现项目中有一个判断String类型不能为空的一个方法，报的错。也就是题目中的错误。然后我点击进去到这个类，发现这个类在项目中没有.java文件，只有class文件。说明项目启动时，是完全可以编译过去的。但是运行时就会出现异常。然后根据错误提示，找到该类的import 导包路径，发现项目中，根本就没有导入这个jar包，也就是说没有这个类。所以，我导入这个jar包之后，接口就正常返回200了。 这里记录一下这个异常。希望能帮助到大家。</p>
+
+    
+
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          阿黄
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://icebreakruler.github.io/2022/05/24/NoClassDefFoundError/" title="java.lang.NoClassDefFoundError:org/apache/commons/collections/Predicate" target="_blank">https://icebreakruler.github.io/2022/05/24/NoClassDefFoundError/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异常</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://icebreakruler.github.io/2022/05/24/NoClassDefFoundError/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+    <section id="comments" class="comments">
+        <style>
+          .comments {
+            margin: 30px;
+            padding: 10px;
+            background: #fff
+          }
+
+          @media screen and (max-width: 800px) {
+            .comments {
+              margin: auto;
+              padding: 10px;
+              background: #fff
+            }
+          }
+        </style>
+        
+    <body>
+    <div id="gitalk-container"></div>
+    </body>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript"> var gitalk = new Gitalk({
+        clientID: 'e138711c4e528e76c33a',
+        clientSecret: '375d2febce1d11c5c1640c21639954d5e5965500',
+        repo: 'IcebreakRuler.github.io',
+        owner: 'IcebreakRuler',
+        admin: ['IcebreakRuler'],
+        id: decodeURI(location.pathname),
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+</script>
+
+
+    </section>
+
+
+
+
+
+
 
 
           </div>
@@ -288,9 +465,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -355,11 +532,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">线上问题排查</a>
+                <a href="javascript:void(0)" class="js-tag color3">异常</a>
               </li>
             
             <div class="clearfix"></div>
