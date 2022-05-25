@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://icebreakruler.github.io/images/image-20220524225218245.png">
 <meta property="og:image" content="https://icebreakruler.github.io/images/image-20220525233046947.png">
 <meta property="article:published_time" content="2022-05-24T14:40:00.000Z">
-<meta property="article:modified_time" content="2022-05-25T15:43:17.149Z">
+<meta property="article:modified_time" content="2022-05-25T15:49:20.675Z">
 <meta property="article:author" content="阿黄">
 <meta property="article:tag" content="RabbitMQ">
 <meta name="twitter:card" content="summary">
@@ -262,13 +262,14 @@
 <h5 id="1-2-应用解耦"><a href="#1-2-应用解耦" class="headerlink" title="1.2 应用解耦"></a>1.2 应用解耦</h5><p>上文中已经提到了应用解耦的案例，如果使用传统方式的话，用户进行下单后，订单系统调用库存系统，库存系统挂掉的话，用户直接下单失败了。如果使用了MQ，当库存系统出现问题时，用户下单的消息会存放到MQ中，当库存系统修复后，我们可以让库存系统去处理MQ中存放的订单消息，进行减库存操作。中间用户下完单直接看到订单成功，感知不到库存系统的故障。</p>
 <p><img src="/../images/image-20220525233046947.png" alt="image-20220525233046947"></p>
 <h5 id="1-3-异步处理"><a href="#1-3-异步处理" class="headerlink" title="1.3 异步处理"></a>1.3 异步处理</h5><p>比如用户注册时，需要我们填写邮箱以及个人信息，填写完成后，给邮箱发送一条信息，还给我们发送一个短信，提醒我们打开邮箱等等这种操作。如果从传统的方式来说，填写邮箱–&gt;填写个人信息–&gt;发送邮箱–&gt;发送短信 都是串行的话，那么用户再点击提交后，需要等发送邮箱、发送短信这些东西走完之后，才能给用户显示注册成功。那么显然这种串行的方式效率会非常的慢。如果我们使用了MQ，待用户提交后，直接发送2个MQ，一个去发送邮箱、一个去发送短信，让MQ去处理这两件事。这样用户点击提交后，直接给用户返回注册成功，剩下的发送邮箱、发送短信由通知系统去做。不需要串行的等待这两件事完成。这样异步处理就提高了效率。</p>
-<h4 id="四、MQ的优缺点"><a href="#四、MQ的优缺点" class="headerlink" title="四、MQ的优缺点"></a>四、MQ的优缺点</h4><p><strong>优点</strong></p>
-<p>优点就是以上的那些场景应用，就是在特殊场景下有其对应的好处，解耦、异步、削峰。</p>
-<p><strong>缺点</strong></p>
-<ol>
-<li><strong>系统的可用性降低</strong>系统引入的外部依赖越多，系统越容易挂掉，本来只是A系统调用BCD三个系统接口就好，ABCD四个系统不报错整个系统会正常运行。引入了MQ之后，虽然ABCD系统没出错，但MQ挂了以后，整个系统也会崩溃。</li>
-<li><strong>系统的复杂性提高</strong>引入了MQ之后，需要考虑的问题也变得多了，如何保证消息没有重复消费？如何保证消息不丢失？怎么保证消息传递的顺序？</li>
-<li><strong>一致性问题</strong>A系统发送完消息直接返回成功，但是BCD系统之中若有系统写库失败，则会产生数据不一致的问题。</li>
+<h4 id="四、MQ的优缺点"><a href="#四、MQ的优缺点" class="headerlink" title="四、MQ的优缺点"></a>四、MQ的优缺点</h4><h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><p>优点就是以上的那些场景应用，就是在特殊场景下有其对应的好处，解耦、异步、削峰。</p>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ol>
+<li><p>系统的可用性降低系统引入的外部依赖越多，系统越容易挂掉，本来只是A系统调用BCD三个系统接口就好，ABCD四个系统不报错整个系统会正常运行。引入了MQ之后，虽然ABCD系统没出错，但MQ挂了以后，整个系统也会崩溃。</p>
+</li>
+<li><p>系统的复杂性提高引入了MQ之后，需要考虑的问题也变得多了，如何保证消息没有重复消费？如何保证消息不丢失？怎么保证消息传递的顺序？</p>
+</li>
+<li><p>一致性问题A系统发送完消息直接返回成功，但是BCD系统之中若有系统写库失败，则会产生数据不一致的问题。</p>
+</li>
 </ol>
 
     
