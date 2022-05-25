@@ -6,17 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://icebreakruler.github.io">
-  <title>Archives: 2022/5 | 阿黄学编程</title>
+  <title>RabbitMQ(第一节 RabbitMQ简介) | 阿黄学编程</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="阿黄学编程">
-<meta property="og:url" content="https://icebreakruler.github.io/archives/2022/05/index.html">
+  <meta name="description" content="RabbitMQ简介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ(第一节 RabbitMQ简介)">
+<meta property="og:url" content="https://icebreakruler.github.io/2022/05/24/RabbitMQ%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="阿黄学编程">
+<meta property="og:description" content="RabbitMQ简介">
 <meta property="og:locale">
+<meta property="og:image" content="https://icebreakruler.github.io/Users/yyh01/Documents/fw/myself_blog/myblog/source/images/image-20220524225218245.png">
+<meta property="og:image" content="https://icebreakruler.github.io/Users/yyh01/Documents/fw/myself_blog/myblog/source/images/image-20220525233046947.png">
+<meta property="article:published_time" content="2022-05-24T14:40:00.000Z">
+<meta property="article:modified_time" content="2022-05-25T15:35:46.759Z">
 <meta property="article:author" content="阿黄">
+<meta property="article:tag" content="RabbitMQ">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://icebreakruler.github.io/Users/yyh01/Documents/fw/myself_blog/myblog/source/images/image-20220524225218245.png">
   
     <link rel="alternative" href="/atom.xml" title="阿黄学编程" type="application/atom+xml">
   
@@ -189,41 +197,113 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-RabbitMQ简介" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/05/24/RabbitMQ%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-        <time datetime="2022-05-24T14:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/05/24/RabbitMQ%E7%AE%80%E4%BB%8B/" target="_blank">RabbitMQ(第一节 RabbitMQ简介)</a>
   
+    <h1 class="article-title" itemprop="name">
+      RabbitMQ(第一节 RabbitMQ简介)
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/05/24/RabbitMQ%E7%AE%80%E4%BB%8B/" class="archive-article-date">
+        <time datetime="2022-05-24T14:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="一、什么是消息队列？"><a href="#一、什么是消息队列？" class="headerlink" title="一、什么是消息队列？"></a>一、什么是消息队列？</h4><p>​		先从字面意思入手，首先我们学习过队列吧，队列其实如果简单理解的话，就好像生活中，我们在医院排队取号一样，先排队先拿号。那么对于队列来讲，就是先进先出。加上消息这两个字呢，消息会放入队列中，一个个排队，等待消费者去消费。消息也可以理解为你(生产者)在微信上给某个人发送消息，那么对方(消费者)这个人也是依次看到你发送的消息。</p>
+<p>​		这下你应该理解了什么生产者、什么是消费者了吧。那简单的画一个图咯。生产者就是生产消息的，那么消费者就是消费消息的。</p>
+<p><img src="/Users/yyh01/Documents/fw/myself_blog/myblog/source/images/image-20220524225218245.png" alt="image-20220524225218245"></p>
+<span id="more"></span>
+<p>​		如果脱离现实，回到互联网架构上，消息队列(MQ)其实是一种非常常见的上下游”逻辑解耦+物理解耦”的消息通信服务。使用了MQ之后，消息发送上游只需要依赖MQ，不用再依赖其他服务了。</p>
+<h4 id="二、为什么要用消息队列-MQ-？"><a href="#二、为什么要用消息队列-MQ-？" class="headerlink" title="二、为什么要用消息队列(MQ)？"></a>二、为什么要用消息队列(MQ)？</h4><p>​		如果上游系统为订单系统、下游系统为库存系统，那么当用户下单之后，订单系统一定会调用库存系统，进行相应的扣减库存操作。那么在没有MQ之前，调用下游系统，绝对是订单系统主动去调用库存系统。但是这有一个缺点，就是如果调用库存系统出现故障，那么用户就直接下单失败了。因为订单系统和库存系统是强耦合的。但是MQ可以解决这个问题，它可以让你的订单系统和库存系统之间进行解耦，但是你的订单系统需要依赖这个MQ。比如订单系统将下单消息放入到消息队列中，之后给用户返回下单成功，然后库存系统发现消息队列中有消息过来了，就会消费这个消息，对商品进行减库存操作。</p>
+<p>​		操作MQ不单单只能解决系统之间的耦合问题，还要其他特性。比如：流量削峰、应用解耦、异步处理等等操作。</p>
+<h4 id="三、MQ特性"><a href="#三、MQ特性" class="headerlink" title="三、MQ特性"></a>三、MQ特性</h4><h5 id="1-1-流量削峰"><a href="#1-1-流量削峰" class="headerlink" title="1.1 流量削峰"></a>1.1 流量削峰</h5><p>​		电商平台秒杀就是很好的一个例子，我们还拿订单系统、库存系统来讲。大家都会拿着手机登录电商平台进行秒杀下单。那么下单就会调用订单系统，订单系统就会调用库存系统。假如正常情况下系统每秒可以处理3000个网络请求，但是遇到秒杀这种高峰期的时候，每秒会发送5000个网络请求。但是系统每秒只能处理3000个网络请求，显然如果系统强行接收5000个请求，系统会直接瘫痪的。</p>
+<p>​		如果我们使用了MQ，我们可以将这5000个网路请求存储到MQ中，这样系统可以正常按每秒3000个网络请求进行处理，如果我们的秒杀只有5分钟，那么这5分钟一共会收到1500000个网络请求，按照每秒3000个网路请求处理的话，大约花费8分钟就可以处理完这些请求。但这总比导致系统瘫痪，某些用户下不了单要好吧。</p>
+<h5 id="1-2-应用解耦"><a href="#1-2-应用解耦" class="headerlink" title="1.2 应用解耦"></a>1.2 应用解耦</h5><p>上文中已经提到了应用解耦的案例，如果使用传统方式的话，用户进行下单后，订单系统调用库存系统，库存系统挂掉的话，用户直接下单失败了。如果使用了MQ，当库存系统出现问题时，用户下单的消息会存放到MQ中，当库存系统修复后，我们可以让库存系统去处理MQ中存放的订单消息，进行减库存操作。中间用户下完单直接看到订单成功，感知不到库存系统的故障。</p>
+<p><img src="/Users/yyh01/Documents/fw/myself_blog/myblog/source/images/image-20220525233046947.png" alt="image-20220525233046947"></p>
+<h5 id="1-3-异步处理"><a href="#1-3-异步处理" class="headerlink" title="1.3 异步处理"></a>1.3 异步处理</h5><p>比如用户注册时，需要我们填写邮箱以及个人信息，填写完成后，给邮箱发送一条信息，还给我们发送一个短信，提醒我们打开邮箱等等这种操作。如果从传统的方式来说，填写邮箱–&gt;填写个人信息–&gt;发送邮箱–&gt;发送短信 都是串行的话，那么用户再点击提交后，需要等发送邮箱、发送短信这些东西走完之后，才能给用户显示注册成功。那么显然这种串行的方式效率会非常的慢。如果我们使用了MQ，待用户提交后，直接发送2个MQ，一个去发送邮箱、一个去发送短信，让MQ去处理这两件事。这样用户点击提交后，直接给用户返回注册成功，剩下的发送邮箱、发送短信由通知系统去做。不需要串行的等待这两件事完成。这样异步处理就提高了效率。</p>
+<h4 id="四、MQ的优缺点"><a href="#四、MQ的优缺点" class="headerlink" title="四、MQ的优缺点"></a>四、MQ的优缺点</h4><p><strong>优点</strong></p>
+<p>优点就是以上的那些场景应用，就是在特殊场景下有其对应的好处，解耦、异步、削峰。</p>
+<p><strong>缺点</strong></p>
+<ol>
+<li><p><strong>系统的可用性降低</strong>系统引入的外部依赖越多，系统越容易挂掉，本来只是A系统调用BCD三个系统接口就好，ABCD四个系统不报错整个系统会正常运行。引入了MQ之后，虽然ABCD系统没出错，但MQ挂了以后，整个系统也会崩溃。</p>
+</li>
+<li><p><strong>系统的复杂性提高</strong>引入了MQ之后，需要考虑的问题也变得多了，如何保证消息没有重复消费？如何保证消息不丢失？怎么保证消息传递的顺序？</p>
+</li>
+<li><p><strong>一致性问题</strong>A系统发送完消息直接返回成功，但是BCD系统之中若有系统写库失败，则会产生数据不一致的问题。</p>
+</li>
+</ol>
+
+    
+
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          阿黄
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://icebreakruler.github.io/2022/05/24/RabbitMQ简介/" title="RabbitMQ(第一节 RabbitMQ简介)" target="_blank">https://icebreakruler.github.io/2022/05/24/RabbitMQ简介/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -235,62 +315,147 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://icebreakruler.github.io/2022/05/24/RabbitMQ%E7%AE%80%E4%BB%8B/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/05/24/NoClassDefFoundError/" class="archive-article-date">
-        <time datetime="2022-05-24T01:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/24/NoClassDefFoundError/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java.lang.NoClassDefFoundError:org/apache/commons/collections/Predicate</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/05/24/NoClassDefFoundError/" target="_blank">java.lang.NoClassDefFoundError:org/apache/commons/collections/Predicate</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异常</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+    <section id="comments" class="comments">
+        <style>
+          .comments {
+            margin: 30px;
+            padding: 10px;
+            background: #fff
+          }
+
+          @media screen and (max-width: 800px) {
+            .comments {
+              margin: auto;
+              padding: 10px;
+              background: #fff
+            }
+          }
+        </style>
+        
+    <body>
+    <div id="gitalk-container"></div>
+    </body>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript"> var gitalk = new Gitalk({
+        clientID: 'e138711c4e528e76c33a',
+        clientSecret: '375d2febce1d11c5c1640c21639954d5e5965500',
+        repo: 'IcebreakRuler.github.io',
+        owner: 'IcebreakRuler',
+        admin: ['IcebreakRuler'],
+        id: decodeURI(location.pathname),
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+</script>
+
+
+    </section>
+
+
+
+
+
+
 
 
           </div>
@@ -331,8 +496,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
