@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://icebreakruler.github.io">
-  <title>Archives: 2022/5 | 阿黄学编程</title>
+  <title>Js监听input文本框内容 | 阿黄学编程</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="阿黄学编程">
-<meta property="og:url" content="https://icebreakruler.github.io/archives/2022/05/index.html">
+  <meta name="description" content="Js监听input文本框内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js监听input文本框内容">
+<meta property="og:url" content="https://icebreakruler.github.io/2022/06/07/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/index.html">
 <meta property="og:site_name" content="阿黄学编程">
+<meta property="og:description" content="Js监听input文本框内容">
 <meta property="og:locale">
+<meta property="og:image" content="https://icebreakruler.github.io/2022/06/07/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/yyh01/Documents/fw/myself_blog/myblog/source/_posts/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/image-20220607215518693.png">
+<meta property="article:published_time" content="2022-06-07T14:40:00.000Z">
+<meta property="article:modified_time" content="2022-06-07T15:01:19.706Z">
 <meta property="article:author" content="阿黄">
+<meta property="article:tag" content="Js">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://icebreakruler.github.io/2022/06/07/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/yyh01/Documents/fw/myself_blog/myblog/source/_posts/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/image-20220607215518693.png">
   
     <link rel="alternative" href="/atom.xml" title="阿黄学编程" type="application/atom+xml">
   
@@ -189,151 +196,264 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Js监听Input文本框内容" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/05/28/RabbitMQ(%E7%AC%AC%E4%BA%8C%E8%8A%82Hello%20World)/" class="archive-article-date">
-        <time datetime="2022-05-28T05:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-28</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/05/28/RabbitMQ(%E7%AC%AC%E4%BA%8C%E8%8A%82Hello%20World)/" target="_blank">RabbitMQ(第二节Hello World)</a>
   
+    <h1 class="article-title" itemprop="name">
+      Js监听input文本框内容
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/06/07/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/" class="archive-article-date">
+        <time datetime="2022-06-07T14:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-07</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">652字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="一、JS监听input文本框内容"><a href="#一、JS监听input文本框内容" class="headerlink" title="一、JS监听input文本框内容"></a>一、JS监听input文本框内容</h4><p>​		假设一个场景，在文本框输入一个值，下面的标签监听这个文本框的值。也就是说当文本框中的内容变化时，下面的标签就会同步文本框的值。直接上代码。</p>
+<span id="more"></span>
+
+<p>下面代码是使用了JQuery库，所以需要同时绑定input和propertyChange 两个事件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;content&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入数字&quot;</span> <span class="attr">onpropertychange</span>=<span class="string">&quot;OnPropChanged (event)&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>我还有<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;spanText&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>元<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../static/jquery-3.5.1.min.js&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    $(<span class="string">&quot;#content&quot;</span>).<span class="title function_">bind</span>(<span class="string">&quot;input propertychange&quot;</span>,<span class="keyword">function</span>(<span class="params">event</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;#spanText&#x27;</span>).<span class="title function_">text</span>($(<span class="string">&quot;#content&quot;</span>).<span class="title function_">val</span>());</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="/2022/06/07/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/yyh01/Documents/fw/myself_blog/myblog/source/_posts/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/image-20220607215518693.png" alt="image-20220607215518693"></p>
+<h4 id="二、下面讲解一下这里的-onpropertychange-x3D-”OnPropChanged-event-”-这是个什么东西？"><a href="#二、下面讲解一下这里的-onpropertychange-x3D-”OnPropChanged-event-”-这是个什么东西？" class="headerlink" title="二、下面讲解一下这里的 onpropertychange&#x3D;”OnPropChanged (event)” 这是个什么东西？"></a>二、下面讲解一下这里的 onpropertychange&#x3D;”OnPropChanged (event)” 这是个什么东西？</h4><p>过去一般都使用onchange&#x2F;onkeyup&#x2F;onkeypress&#x2F;onkeydown实现，但是这存在着一些不好的用户体验。比如onchange事件只在键盘或者鼠标操作改变对象属性，且失去焦点时触发，脚本触发无效；而onkeydown&#x2F;onkeypress&#x2F;onkeyup在处理复制、粘贴、拖拽、长按键（按住键盘不放）等细节上并不完善。onpropertychange属性可在某些情况下解决上面存在的问题，不用考虑是否失去焦点，不管js操作还是键盘鼠标手动操作，只要HTML元素属性发生改变即可立即捕获到。遗憾的是，onpropertychange为IE专属的。跟onpropertychange类似的一个事件是oninput事件。</p>
+<h4 id="三、oninput事件"><a href="#三、oninput事件" class="headerlink" title="三、oninput事件"></a>三、oninput事件</h4><p>oninput事件是IE之外的大多数浏览器支持的事件，在value改变时触发，实时的，即每增加或删除一个字符就会触发，然而通过js改变value时，却不会触发。</p>
+<h4 id="四、oninput事件与onpropertychange事件"><a href="#四、oninput事件与onpropertychange事件" class="headerlink" title="四、oninput事件与onpropertychange事件"></a>四、oninput事件与onpropertychange事件</h4><h5 id="oninput"><a href="#oninput" class="headerlink" title="oninput"></a>oninput</h5><ul>
+<li>当脚本中改变value时，不会触发。</li>
+<li>从浏览器的自动下拉列表框中选取时，不会触发。</li>
+</ul>
+<h5 id="onpropertychange事件"><a href="#onpropertychange事件" class="headerlink" title="onpropertychange事件"></a>onpropertychange事件</h5><ul>
+<li>当input设置为disable&#x3D;true后，onpropertychange不会触发。</li>
+<li>修改了 input:checkbox 或者 input:radio 元素的选择中状态， checked 属性发生变化。</li>
+<li>修改了 input:text 或者 textarea 元素的值，value 属性发生变化。</li>
+<li>修改了 select 元素的选中项，selectedIndex 属性发生变化。</li>
+<li>在监听到 onpropertychange 事件后，可以使用 event 的 propertyName 属性来获取发生变化的属性名称。</li>
+</ul>
+<h4 id="五、参考文章"><a href="#五、参考文章" class="headerlink" title="五、参考文章"></a>五、参考文章</h4><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c9da53a322ab">https://www.jianshu.com/p/c9da53a322ab</a></p>
+
+    
+
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          阿黄
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://icebreakruler.github.io/2022/06/07/Js监听Input文本框内容/" title="Js监听input文本框内容" target="_blank">https://icebreakruler.github.io/2022/06/07/Js监听Input文本框内容/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RabbitMQ</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://icebreakruler.github.io/2022/06/07/Js%E7%9B%91%E5%90%ACInput%E6%96%87%E6%9C%AC%E6%A1%86%E5%86%85%E5%AE%B9/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/05/24/RabbitMQ%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-        <time datetime="2022-05-24T14:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/28/RabbitMQ(%E7%AC%AC%E4%BA%8C%E8%8A%82Hello%20World)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RabbitMQ(第二节Hello World)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/05/24/RabbitMQ%E7%AE%80%E4%BB%8B/" target="_blank">RabbitMQ(第一节 RabbitMQ简介)</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RabbitMQ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/05/24/NoClassDefFoundError/" class="archive-article-date">
-        <time datetime="2022-05-24T01:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/05/24/NoClassDefFoundError/" target="_blank">java.lang.NoClassDefFoundError:org/apache/commons/collections/Predicate</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异常</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+    <section id="comments" class="comments">
+        <style>
+          .comments {
+            margin: 30px;
+            padding: 10px;
+            background: #fff
+          }
+
+          @media screen and (max-width: 800px) {
+            .comments {
+              margin: auto;
+              padding: 10px;
+              background: #fff
+            }
+          }
+        </style>
+        
+    <body>
+    <div id="gitalk-container"></div>
+    </body>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript"> var gitalk = new Gitalk({
+        clientID: 'e138711c4e528e76c33a',
+        clientSecret: '375d2febce1d11c5c1640c21639954d5e5965500',
+        repo: 'IcebreakRuler.github.io',
+        owner: 'IcebreakRuler',
+        admin: ['IcebreakRuler'],
+        id: decodeURI(location.pathname),
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+</script>
+
+
+    </section>
+
+
+
+
+
+
 
 
           </div>
@@ -374,8 +494,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
